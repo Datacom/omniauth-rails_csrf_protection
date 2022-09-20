@@ -1,4 +1,4 @@
-lib = File.expand_path("lib", __dir__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "omniauth/rails_csrf_protection/version"
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "actionpack", ">= 4.2"
+  spec.add_dependency "actionpack", ">= 3.0"
   spec.add_dependency "omniauth", ">= 1.3.1"
 
   spec.add_development_dependency "bundler"
