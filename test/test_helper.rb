@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 # Simple Rails application template, based on Rails issue template
 # https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_controller_gem.rb
@@ -20,7 +20,7 @@ silence_warnings do
 
     gem "rails"
     gem "omniauth"
-    gem "omniauth-rails_csrf_protection", path: File.expand_path("../..", __FILE__)
+    gem "omniauth-rails_csrf_protection", path: File.expand_path("..", __dir__)
   end
 end
 
@@ -32,7 +32,7 @@ require "minitest/autorun"
 
 # Build a test application which uses OmniAuth
 class TestApp < Rails::Application
-  config.root = File.dirname(__FILE__)
+  config.root = __dir__
   config.session_store :cookie_store, key: "cookie_store_key"
   config.secret_token = "secret_token"
   config.eager_load = false
